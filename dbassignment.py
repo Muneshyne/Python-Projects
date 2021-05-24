@@ -1,47 +1,31 @@
 
 
-import os
 import sqlite3
 
-conn = sqlite3.connect('styles.db')
+conn = sqlite3.connect('textFiles.db')  
 
 with conn:
       cur = conn.cursor()
-      cur.execute("CREATE TABLE IF NOT EXISTS tbl_style( \
+      cur.execute("CREATE TABLE IF NOT EXISTS tbl_files( \
             ID INTEGER PRIMARY KEY AUTOINCREMENT, \
-            col_sName TEXT, \
-            col_sPerson TEXT \
+            col_fileName TEXT \
             )")
       conn.commit()
 conn.close()
-#created the table with a column named col_style
 
-conn = sqlite3.connect('styles.db')
+fileList = ('information.docx','Hello.txt','myImage.png', \
+            'myMovie.mpg','World.txt','data.pdf','myPhoto.jpg')
+
+
+conn = sqlite3.connect('textFiles.db')
 
 with conn:
       cur = conn.cursor()
-      cur.execute("INSERT INTO tbl_style(col_sName, col_sPerson) VALUES (?,?)", \
-                  ('Blue', 'Jack')) # always add the , between values
+      for file in fileList:
+           if (file.endswith('.txt')):
+                  cur.execute("INSERT INTO tbl_files(col_fileName) VALUES (?)",
+                      (file,))
       conn.commit()
 conn.close()
 
-
-def writeData():
-      data = '\nHello World!'
-      with open('Hello.txt', 'a') as f:  #a = append
-            f.write(data)
-            f.close()
-
-
-def openFile():
-      with open('Hello.txt','r') as f:
-            data = f.read()
-            print(data)
-            f.close()
-
-
-
-
-if __name__ == "__main__":
-      writeData()
-      openFile()
+print(file.endswith('.txt'))
