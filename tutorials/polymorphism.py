@@ -20,7 +20,7 @@ class User:
 class Employee(User):
       base_pay = 11.00
       department = "General"
-      pin_number = "3980"
+      pin_number = "3980"\\\\\\\\\\\\
 
 
 # This is the same method in the parent class "User",
