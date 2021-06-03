@@ -9,9 +9,16 @@ frm = Frame(win)
 btn1 = Button(frm, text='Submit')
 btn2 = Button(frm, text='Cancel')
 btn3 = Button(frm, text='Browse')
+
 btn1.pack(side = LEFT)
 btn2.pack(side = LEFT)
 btn3.pack(side = LEFT)
+
+e1 = tk.Entry(frm)
+e2 = tk.Entry(frm)
+e1.pack()
+e2.pack()
+
 lbl = Label(win, text="Please choose a file path.")
 lbl.pack()
 frm.pack()
