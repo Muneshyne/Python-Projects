@@ -1,13 +1,25 @@
 
-
 import shutil
 import os
 import tkinter as tk
 from tkinter import *
 
+win = Tk()
+frm = Frame(win)
+btn1 = Button(frm, text='Submit')
+btn2 = Button(frm, text='Cancel')
+btn3 = Button(frm, text='Browse')
+btn1.pack(side = LEFT)
+btn2.pack(side = LEFT)
+btn3.pack(side = LEFT)
+lbl = Label(win, text="Please choose a file path.")
+lbl.pack()
+frm.pack()
+
+
 
 class ParentWindow(Frame):
-      def __init__ (self, master):
+      def __init__ (self, master): #self is the class, master is the frame
             Frame.__init__ (self)
 
             self.master = master
@@ -16,9 +28,10 @@ class ParentWindow(Frame):
             self.master.title('File Transfer')
             self.master.config(bg='lightgray')
 
-    
+            varbtn = StringVar()
+            
 
-      
+
 
 
 
@@ -43,3 +56,4 @@ if __name__ == "__main__":
       root = Tk()
       App = ParentWindow(root)
       root.mainloop()
+
