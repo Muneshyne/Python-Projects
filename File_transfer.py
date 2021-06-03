@@ -7,7 +7,7 @@ from tkinter import *
 
 
 class ParentWindow(Frame):
-      def __init__ (self, master):
+      def __init__ (self, master): #self is the class, master is the frame
             Frame.__init__ (self)
 
             self.master = master
@@ -16,9 +16,10 @@ class ParentWindow(Frame):
             self.master.title('File Transfer')
             self.master.config(bg='lightgray')
 
-    
+            varbtn = StringVar()
 
-      
+
+
 
 
 
