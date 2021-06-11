@@ -15,10 +15,10 @@ course = (
 
 class DjangoClasses(models.Model):
     pass
-    title = models.CharField(max_length=60, choices=Classes_AVAIL),
-    courseNumber = models.IntegerField(max_length=20, choices=course),
-    instructorName = models.CharField(max_length=60),
-    classDuration = models.DecimalField(default=1.0),
+    title = models.CharField(max_length=60, default="", choices=Classes_AVAIL)
+    courseNumber = models.IntegerField(default=0, choices=course)
+    instructorName = models.CharField(max_length=60, default="")
+    classDuration = models.FloatField(default=1.0)
 
     objects = models.Manager()
 
